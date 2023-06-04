@@ -1,0 +1,30 @@
+CREATING TABLE WITH CONSTRAIN---
+
+CREATE TABLE epmloyee_constrain(
+e_name varchar(30) default 'Ram',
+e_id int unique,
+e_salary int not null,
+joining_date date default '2023-1-1',
+e_dept varchar(20),
+check (e_salary > 4000)
+);
+
+--INSERTION
+
+INSERT INTO epmloyee_constrain VALUES(
+'',null,5000,'2023-4-5','IT')
+--NAME KO KHALI RAHEGA INPUT TABLE ME.
+
+--yaha ab name aur joining date ko denge hi nahi input me tab ye default constrain ki waja h se raam le lega 
+INSERT INTO (e_id,e_salary,e_dept) VALUES (123,7000,'MNGR')
+
+BUT AB HAM UNIQUE AUR CHECK CONTRAIN KO CHECK KARENGE---
+INSERT INTO (e_id,e_salary,e_dept) VALUES (null,4000,'hr')
+ab yaha e_id pahale se ek baar null le chuka hai and unique ka matalab NULL lega but ek hi baar , salary 4000 se jyada honi chahiye 
+--error
+
+07:36:53	INSERT INTO epmloyee_constrain (e_id,e_salary,e_dept) VALUES (null,4000,'hr')
+Error Code: 3819. Check constraint 'epmloyee_constrain_chk_1' is violated.	0.000 sec
+
+
+
