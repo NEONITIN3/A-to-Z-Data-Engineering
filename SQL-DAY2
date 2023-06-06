@@ -1,1 +1,122 @@
-ALTER
+Create database class2_db;
+
+use class2_db;
+-- WE ARE GOING TO LEARN DDL COMMAND
+-- CREATE
+CREATE TABLE RAAM (NAME VARCHAR(10), ID INT);
+
+-- INSERT ONLY ONE VALUE AT A TIME
+INSERT INTO RAAM VALUES('JANAK',01)
+SELECT * FROM RAAM
+
+-- INSERTING MULTIPLE VALUE AT A TIME
+INSERT INTO RAAM VALUES('LAKHAN',02),
+('LAKHANAWA',03),
+('PARANAWA',04),
+('JIWANAWA',05),
+('DARSANWA',06),
+('NIHARWA',703),
+('JIWANAWA',103),
+('PARANAWA',503);
+
+-- ALTER (ADDING RENAME DELETE COLOMN DONE BY THIS )
+-- WE ARE GOING TO ADD EXTRA COLOMN IN TABLE
+ALTER TABLE RAAM ADD VILLAGE VARCHAR(50) DEFAULT 'PURESAWA'
+
+-- DELETING PARTICULAT COLOMN WITH ALTER COMMAND
+ALTER TABLE RAAM DROP VILLAGE;
+
+-- CHANGING DATA TYPE OF EXISTING COLUMN
+ALTER TABLE RAAM MODIFY COLUMN VILLAGE VARCHAR(150)
+
+-- SCHEMA DETAILS
+SHOW CREATE TABLE RAAM
+
+-- o/P
+-- CREATE TABLE `raam` (
+--    `NAME` varchar(10) DEFAULT NULL,
+--    `ID` int DEFAULT NULL,
+--    `VILLAGE` varchar(150) DEFAULT NULL
+--  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+
+
+--- rename the column name to full_name
+alter table employee rename column name to full_name;
+
+
+create table if not exists employee(
+    id int,
+    name VARCHAR(50),
+    age int,
+    hiring_date date,
+    salary int,
+    city varchar(50)
+);
+SELECT * FROM EMP;
+
+-- RENAMING TABLE 
+ALTER TABLE emp RENAME TO EMPL;
+SHOW TABLES
+SELECT * FROM EMPL
+
+insert into empl values(1,'NEO', 24, '2021-08-10', 10000, 'PURESAWA'),
+(2,'Rahul', 25, '2021-08-10', 20000, 'Khajuraho'),(3,'Sunny', 22, '2021-08-11', 11000, 'Banaglore')
+,(5,'Amit', 25, '2021-08-11', 12000, 'Noida'),(6,'Puneet', 26, '2021-08-12', 50000, 'Gurgaon');
+
+-- ADDING CONSTRAINT FOR COLOMN
+ALTER TABLE EMPL ADD CONSTRAINT UNQ_NAME UNIQUE(name);
+SHOW CREATE TABLE EMPL
+--  OUTPUT 
+-- CREATE TABLE `empl` (
+--    `id` int DEFAULT NULL,
+--    `name` varchar(50) DEFAULT NULL,
+--    `age` int DEFAULT NULL,
+--    `hiring_date` date DEFAULT NULL,
+--    `salary` int DEFAULT NULL,
+--    `city` varchar(50) DEFAULT NULL,
+--    UNIQUE KEY `UNQ_NAME` (`name`)
+--  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+-- AB HAM DEKHO SAM ENAME KA DOUBLE ENTRY KARE TO DEKHO KAISE FAKE K ERROR MAREGA
+
+insert into empl values(19,'NEO', 29, '2021-08-10', 13000, 'PURESAWAN')
+-- Error Code: 1062. Duplicate entry 'NEO' for key 'empl.UNQ_NAME'
+
+
+--- drop constraint from existing TABLE 
+-- CONSTRAINT JO LAGAGYE HAI USKO DROP KAR LE THEN WE CAN INSERT 
+ALTER TABLE EMPL DROP CONSTRAINT UNQ_NAME;
+insert into empl values(19,'NEO', 29, '2021-08-10', 13000, 'PURESAWAN')
+SELECT * FROM EMPL
+
+
+--- create table with Primary_Key
+
+Create table persons
+(
+    id int, 
+    name varchar(50), 
+    age int,
+    ---Primary Key (id) 
+    constraint pk Primary Key (id) 
+);
+
+-- CREATING TABLE WITH PRIMARY KEY
+Create table persons
+(
+    id int, 
+    name varchar(50), 
+    age int,
+ --    ---Primary Key (id) 
+   CONSTRAINT PK PRIMARY KEY (id)
+);
+insert into persons values(1,'NEONITIN',29);
+
+--- Try to insert duplicate value for primary key COLUMN
+insert into persons values(1,'ARYAN',03);
+-- ERROR 
+-- Duplicate entry '1' for key 'persons.PRIMARY'	0.000 
+-- ALTER TABLE PERSONS DROP CONSTRAINT PK FOR DROPING THE CONSTRAINT
+
