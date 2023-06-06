@@ -1,0 +1,11 @@
+count is not count NULL value in colomn
+means if you have 5 rec from them 2 of them null value them count only say it 3
+
+command:  SELECT COUNT(*) FROM EMPLOYEE
+O/P ME COUNT(*) AND UNDER THIS NO. WILL BE THERE 
+
+ SELECT COUNT(*) AS ROW_COUNT FROM EMPLOYEE
+ 
+ \O/P---
+ ROW_COUNT
+ 78
