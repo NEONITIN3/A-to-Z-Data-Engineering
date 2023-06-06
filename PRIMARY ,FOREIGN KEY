@@ -1,0 +1,45 @@
+-- CREATING TABLE WITH PRIMARY KEY
+Create table persons
+(
+    id int, 
+    name varchar(50), 
+    age int,
+ --    ---Primary Key (id) 
+   CONSTRAINT PK PRIMARY KEY (id)
+);
+insert into persons values(1,'NEONITIN',29);
+
+--- Try to insert duplicate value for primary key COLUMN
+insert into persons values(1,'ARYAN',03);
+-- ERROR 
+-- Duplicate entry '1' for key 'persons.PRIMARY'	0.000 
+-- ALTER TABLE PERSONS DROP CONSTRAINT PK FOR DROPING THE CONSTRAINT
+
+insert into persons values(4,'Charan',null),(5,'Deepak',null),(3,'Amit',28),(2,'Rahul',28),(9,'Deepa',null);
+SELECT * FROM PERSONS
+
+ALTER TABLE PERSONS RENAME COLUMN id TO cust_id;
+
+
+-- AUR HAA YE JARURI NAHI HAI KI FOREIGN KEY K LIYE DONO TABLE ME EK COLUMN COMMON HO 
+-- CREATING FOREIGN KEY
+create table orders
+(
+    order_id int,
+    order_num int,
+    customer_id int,
+  --   EK TABLE KA PRIMARY KEY SET KARO
+  CONSTRAINT PK PRIMARY KEY (order_id),
+--   JISKO BANANA HAI FK WO LIKHO JISKO REFER KAREGA WO BATAO PARAENT TABLE KA
+  CONSTRAINT FK FOREIGN KEY (customer_id) REFERENCES PERSONS(cust_id));
+  SHOW CREATE TABLE ORDERS
+-- _output
+-- CREATE TABLE `orders` (
+--    `order_id` int NOT NULL,
+--    `order_num` int DEFAULT NULL,
+--    `customer_id` int DEFAULT NULL,
+--    PRIMARY KEY (`order_id`),
+--    KEY `FK` (`customer_id`),
+--    CONSTRAINT `FK` FOREIGN KEY (`customer_id`) REFERENCES `persons` (`cust_id`)
+--  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
