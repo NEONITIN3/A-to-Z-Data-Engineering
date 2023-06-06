@@ -1,0 +1,33 @@
+create table if not exists emp(
+    id int,
+    name VARCHAR(50),
+    age int,
+    hiring_date date,
+    salary int,
+    city varchar(50)
+);
+
+insert into empl values(1,'NEO', 24, '2021-08-10', 10000, 'PURESAWA'),
+(2,'Rahul', 25, '2021-08-10', 20000, 'Khajuraho'),(3,'Sunny', 22, '2021-08-11', 11000, 'Banaglore')
+,(5,'Amit', 25, '2021-08-11', 12000, 'Noida'),(6,'Puneet', 26, '2021-08-12', 50000, 'Gurgaon');
+
+SELECT * FROM EMP;
+
+-- RENAMING TABLE 
+ALTER TABLE emp RENAME TO EMPL;
+SHOW TABLES
+ ------------RENAMEING THE COLUMN
+ ALTER TABLE EMPL RENAME COLUMN id TO cust_id;
+ 
+ 
+ DROP VS TRUNCATE
+ 
+ TRUNCATE ONLY DELETE THE TABLE DATA ,ITS NOT DELETE THE TABLE SCHEMA
+ BUT 
+ DROP WILL DELETE THE TABLE AS WELL AS TABLE DATA 
+ 
+TRUNCATE TABLE EMP;
+DROP TABLE EMP;
+
+
+BUT YOU CANT DROP OR TRUCATE THE TABLE WHICH IS REFERENCES FRO ANY FOREIGN KEY.
