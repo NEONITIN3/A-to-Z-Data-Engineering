@@ -1,0 +1,6 @@
+select * from employee
+-- SELLECTING NAME AGE AND PRINTING SALARY WITH NEW COLOMN NAME AS NEW_SALARY
+
+SELECT e_name AS NAME,e_age AS AGE, e_salary AS OLD_SALARY,(e_salary+1200) AS NEW_SALARY FROM employee
+
+in output they add new colomn itself as NEW_SALARY and all value will be greater +1200 from old salary
