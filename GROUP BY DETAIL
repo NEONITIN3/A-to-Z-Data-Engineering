@@ -1,0 +1,48 @@
+The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
+
+The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+
+
+
+-------JISPE BHI GROUP BY LAGANAN HAI USKO PAHALE SLECT KARO , OPERATIONS LIKHO PHIT GROUP BY COLUMN NAME LIKH DO;
+
+# Table and Data for Group By
+create table orders_data
+(
+ cust_id int,
+ order_id int,
+ country varchar(50),
+ state varchar(50)
+);
+insert into orders_data values(1,100,'USA','Seattle'),
+(2,101,'INDIA','UP'),(2,103,'INDIA','Bihar'),(4,108,'USA','WDC'),
+(5,109,'UK','London'),(4,110,'USA','WDC'),(3,120,'INDIA','AP'),(2,121,'INDIA','Goa'),
+(1,131,'USA','Seattle'),(6,142,'USA','Seattle'),(7,150,'USA','Seattle')
+;
+SELECT * FROM orders_data
+
+-- AB AGAR COUNTRY WISE KITNA OREDR HUWA WO DEKHNA HAI
+SELECT COUNTRY ,COUNT(ORDER_ID) AS ORDER_COUNT FROM ORDERS_DATA GROUP BY COUNTRY
+
+Q---------YE PATA KARNA HAI MALE KITNE KAAM KARTE HAI FEMAL EKITNE 
+SELECT E_GENDER, COUNT(E_GENDER) AS GENDER_WISE FROM EMPLOYEE GROUP BY E_GENDER
+
+Q-- MALE AU RFEMALE KI TOTAL SALARY COUNT 
+SELECT GENDER, COUNT(E_GENDER) AS GENDER_TOTAL,SUM(E-SALARY) AS GENDER_SALARY FROM EMPLOYEE GROUP BY E-GENDER
+
+
+SELECT COUNTRY,COUNT(COUNTRY) AS COUNTRY FROM orders_data GROUP BY COUNTRY ORDER BY COUNT(COUNTRY) DESC
+NAME KE HISAB SE YE GROUP HO KE COUNT HO JAYEGA AUR W COUNT DESC ORDER ME DISPLAY HOGA
+
+
+
+
+# calculate different aggregated metrices for salary
+SELECT E_AGE,MAX(E_AGE) AS MAX_AGE_OF_GROUP,
+SUM(E_SALARY) AS SUM_SALARY_OF_GROUP,
+MIN(E_SALARY) AS MIN_SALARY_OF_GROUP,
+avg(E_salary) as avg_salary_by_each_age_group,
+       count(*) as total_employees_by_each_age_group 
+       from employee group by E_age
+
+
