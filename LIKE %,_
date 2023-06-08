@@ -1,0 +1,23 @@
+# how to use LIKE operation in where clause
+# % -> Zero, one or more than one characters,
+# _ -> only one character
+
+SEC CHAR S KO AISA NAME
+WHERE NAME LIKE '_S%'
+# get all those employees whose name starts with 'S'
+select * from employee where name like 'S%';
+
+# get all those employees whose name starts with 'Sh'
+select * from employee where name like 'Sh%';
+
+# get all those employees whose name ends with 'l'
+select * from employee where name like '%l';
+
+# get all those employees whose name starts with 'S' and ends with 'k'
+select * from employee where name like 'S%k';
+
+# Get all those employees whose name will have exact 5 characters
+select * from employee where name like '_____';
+
+# Return all those employees whose name contains atleast 5 characters
+select * from employee where name like '%_____%';
