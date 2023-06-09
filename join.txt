@@ -1,8 +1,63 @@
 # Examples for join
+create table orders
+(
+    order_id int,
+    cust_id int,
+    order_dat date, 
+    shipper_id int
+);
 
-ham log join se related query karenge 
+create table customers
+(
+    cust_id int,
+    cust_name varchar(50),
+    country varchar(50)
+);
 
-table hai order customer shippers teeno ko lekar
+create table shippers
+(
+    ship_id int,
+    shipper_name varchar(50)
+);
+
+insert into orders values(10308, 2, '2022-09-15', 3);
+insert into orders values(10309, 30, '2022-09-16', 1);
+insert into orders values(10310, 41, '2022-09-19', 2);
+
+insert into customers values(1, 'Neel', 'India');
+insert into customers values(2, 'Nitin', 'USA');
+insert into customers values(3, 'Mukesh', 'UK');
+
+insert into shippers values(3,'abc');
+insert into shippers values(1,'xyz');
+
+ 
+ 
+ ---------------------INNEEEEEEEEEER JOIIIIIIIIIIIIIN
+ 
+ SELECT 
+OD.*,C.*
+FROM ORDERS OD INNER JOIN CUSTOMERS C ON OD.CUST_ID = C.CUST_ID
+
+///OD IS ALIAS FOR TABLE ORDERS AND C IS FOR CUSTOMER
 
 
-c
+
+
+
+
+
+---------->>>>>>>LEFT JOIN ( LEFT SE MATCH KARA K O/P DEG AJO NAHI HOGA RIGHT WALE TABLE ME USKE LIYE NULL VALUE CONSIDER KAR LEGA
+
+ SELECT 
+OD.*,C.*
+FROM ORDERS OD LEFT JOIN CUSTOMERS C ON OD.CUST_ID = C.CUST_ID
+
+
+
+
+---------->>>>>>>RIGHT JOIN ( RIGHT SE MATCH KARA K O/P DEG AJO NAHI HOGA LEFT WALE TABLE ME USKE LIYE NULL VALUE CONSIDER KAR LEGA
+
+ SELECT 
+OD.*,C.*
+FROM ORDERS OD  RIGHT JOIN CUSTOMERS C ON OD.CUST_ID = C.CUST_ID
