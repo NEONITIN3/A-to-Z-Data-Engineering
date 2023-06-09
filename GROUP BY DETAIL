@@ -53,3 +53,9 @@ MIN(E_SALARY) AS MIN_SALARY_OF_GROUP,
 avg(E_salary) as avg_salary_by_each_age_group,
        count(*) as total_employees_by_each_age_group 
        from employee where e_age<>'null' group by E_age
+       
+       
+       
+        
+ SAME COUNTRY KE JITNE STATE HAI UNKO GROUP KARO ;;
+ select country , group_concat(distinct state) as state_of_country from orders_data group by country
