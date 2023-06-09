@@ -45,4 +45,11 @@ avg(E_salary) as avg_salary_by_each_age_group,
        count(*) as total_employees_by_each_age_group 
        from employee group by E_age
 
+group by with where clouse\
 
+SELECT E_AGE,MAX(E_AGE) AS MAX_AGE_OF_GROUP,
+SUM(E_SALARY) AS SUM_SALARY_OF_GROUP,
+MIN(E_SALARY) AS MIN_SALARY_OF_GROUP,
+avg(E_salary) as avg_salary_by_each_age_group,
+       count(*) as total_employees_by_each_age_group 
+       from employee where e_age<>'null' group by E_age
