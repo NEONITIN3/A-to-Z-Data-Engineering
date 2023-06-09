@@ -1,0 +1,8 @@
+# Examples for join
+
+ham log join se related query karenge 
+
+table hai order customer shippers teeno ko lekar
+
+
+c
