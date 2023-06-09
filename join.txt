@@ -61,3 +61,31 @@ FROM ORDERS OD LEFT JOIN CUSTOMERS C ON OD.CUST_ID = C.CUST_ID
  SELECT 
 OD.*,C.*
 FROM ORDERS OD  RIGHT JOIN CUSTOMERS C ON OD.CUST_ID = C.CUST_ID
+
+
+
+
+
+create table employees_full_data
+(
+    emp_id int,
+    name varchar(50),
+    mgr_id int
+);
+
+insert into employees_full_data values(1, 'Shashank', 3);
+insert into employees_full_data values(2, 'Amit', 3);
+insert into employees_full_data values(3, 'Rajesh', 4);
+insert into employees_full_data values(4, 'Ankit', 6);
+insert into employees_full_data values(6, 'Nikhil', null);
+
+select * from employees_full_data;
+
+# Write a query to print the distinct names of managers??
+select * from employees_full_data;
+
+INNNER JOIN SE HO GAYA 
+
+SELECT 
+EMP.NAME AS EMPLOYEE_NAME ,MNGR.NAME AS MANAGER_NAME
+FROM employees_full_data EMP JOIN employees_full_data MNGR ON EMP.mgr_id = MNGR.emp_id 
