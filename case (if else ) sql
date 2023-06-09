@@ -1,0 +1,27 @@
+create table employees
+(
+    id int,
+    name varchar(50),
+    salary int
+);
+
+insert into employees values(1,'Shashank',5000),(2,'Amit',5500),(3,'Rahul',7000),(4,'Rohit',6000),(5,'Nitin',4000),(6,'Sunny',7500);
+
+select * from employees;
+
+I want to make grade according to salary 
+
+select name ,salary,
+case
+    when salary <=5000 then 'B'
+    when salary >5000 and salary<6000 then 'B+'
+    when salary >6000 and salary <=7000 then 'A'
+    when salary >7000  then 'A+'
+    else
+        'C' end 
+                as employee_garde 
+from employees
+
+
+
+case se start hoga end se khatam hoga 
