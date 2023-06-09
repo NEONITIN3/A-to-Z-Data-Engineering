@@ -59,3 +59,6 @@ avg(E_salary) as avg_salary_by_each_age_group,
         
  SAME COUNTRY KE JITNE STATE HAI UNKO GROUP KARO ;;
  select country , group_concat(distinct state) as state_of_country from orders_data group by country
+ 
+ select country , group_concat(distinct state ORDER BY STATE DESC ) as state_of_country from orders_data group by country
+ select country , group_concat(distinct state ORDER BY STATE DESC SEPARATOR '<->') as state_of_country from orders_data group by country
