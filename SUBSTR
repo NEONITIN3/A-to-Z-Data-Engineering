@@ -1,0 +1,35 @@
+SUBSTR we use to select particular part of any string in SQL
+SUBSTR(colomn,start_index,kitna_length_tak)
+name hai =NEONITIN
+kewal NIT select karna hai to
+select SUBSTR('NEONITIN',4,3)  #NIT k liye N 4 se start  ho raha tha aur 3 length tak chahiye
+---------------------------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Qlets we need select city name from station table which start with vowel
+esko like operator se bhi kar sakat hai
+select distinct(city) from station where 
+city like 'a%' or 
+city like 'e%' or 
+city like 'i%' or 
+city like 'o%' or 
+city like 'u%' order by city
+
+but here 
+select city from station where SUBSTR(city,1,1) IN ('a','e','i','o','u')
+#-------------------------------pahal letter hi chahiye esi liye start 1 se aur legth buhi ek hi rakha
+
+_________________________>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Q select city which name not end with vowel
+
+NOT like se esko kar sakat ehaii
+
+select distinct(city) from station where 
+city NOT like '%a' AND 
+city NOT like '%e' AND 
+city NOT like '%i' AND
+city NOT like '%o' AND
+city NOT like '%u' order by city
+
+or 
+
+select distinct(city) from station where SUBSTR(city,length(city),length(city)) NOT IN ('a','e','i','o','u') oerder by city;
+----yaha legth(city) lene se hamesa last wala letter hi select hoga aur usko vowel se compare bhi kar lega 
