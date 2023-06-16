@@ -1,0 +1,39 @@
+Q11. Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result
+cannot contain duplicates
+agar colomn case sensitive hai to LIKE operation bhi case sesnitive hoga agar colomn nahi hai to LIKE bhi nahi hoga case sensitive ;
+
+select distinct(city) from station where lower(SUBSTR(CITY,1,1)) IN ('a','e','i','o','u')
+or 
+select distinct(city) from station where 
+city like '%a' or 
+city like '%e' or 
+city like '%i' or 
+city like '%o' or 
+city like '%u' order by city
+
+Q11. Query the list of CITY names NOT starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result
+cannot contain duplicates
+
+select distinct(city) from station where lower(SUBSTR(CITY,1,1)) NOT IN ('a','e','i','o','u')
+
+or 
+select distinct(city) from station where 
+city NOT like 'a%' AND 
+city NOT like 'e%' AND 
+city NOT like 'i%' AND
+city NOT like 'o%' AND
+city NOT like 'u%' order by city
+
+Q un city ka naam batao jo vowel se na khatam ho rahi ho
+
+ans
+select distinct(city) from station where 
+city NOT like '%a' AND 
+city NOT like '%e' AND 
+city NOT like '%i' AND
+city NOT like '%o' AND
+city NOT like '%u' order by city
+or 
+select distinct(city) from station where SUBSTR(CITY,LENGTH(CITY),LENGTH(CITY)) NOT IN ('a','e','i','o','u')
+-----lenth(city) karne se kewal last wala hi latter select karega 
+
