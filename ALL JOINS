@@ -1,0 +1,49 @@
+jo table slect karte hai wo ban jata hai left wala table baki dusara right wala ho jat ahai
+select * from t1 ab yaaha t1 left table ho gya 
+
+slecct * from t2 yaha t2 table left table ban gaya 
+
+use de_class
+create table t1 (a int ,b int , c int);
+insert into t1 values (1,4,6),(2,5,7);
+create table t2 (a int ,m int , n int);
+insert into t2 values (1,1,6),(3,5,7);
+select * from t1;
+
+1	4	6
+2	5	7
+
+select * from t2;
+table :
+1	1	6
+3	5	7
+LEFT JOIN -----------------
+select * from t2 left JOIN t1 ON t2.a= t1.a;
+t2 left me hai aur ye left join bhi hai to t2 ka sara rhega aur t1 ka t2 se match wala bas rahega 
+1	1	6	1	4	6
+3	5	7	N N N		
+
+if 
+select * from t1 left JOIN t2 ON t2.a= t1.a;
+1	4	6	1	1	6
+2	5	7	N N N		
+
+aise hi right join bhi work karta hai
+select * from t1 RIGHT JOIN t2 ON t2.a= t1.a;
+select t1 kiye hai to t1 left wala hai aur t2 ban gaya right kaa aur ye right join hai to right ka sara rhega ..................
+1	4	6	1	1	6
+N N N	3	5	7
+
+select * from t2 RIGHT JOIN t1 ON t2.a= t1.a;
+
+      1	1	6	1	4	6
+			2	5	7
+      
+      1	1	6	1	4	6
+			2	5	7
+
+select 8 from t1 inner join t2 on t2.a=t1.b
+ye jo row common hoga wahi o/p dega 
+
+
+self join : 
