@@ -1,0 +1,11 @@
+VIEW table ye table main table se banaya jata hai 
+jo ki mai table ka data hi le kar kuch aggretagte fun laga ke apane hisab se banay eh ai
+
+CREATE VIEW view_name as SELECT colomn_name, sum (salary ).... 
+FROM main_table_name GROUP BY colomn_name;
+select * from view_name
+
+
+CREATE VIEW ordr_view as select cust_id ,AVG(order_id) from orders_data group by cust_id;
+
+select * from ordr_view;
