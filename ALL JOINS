@@ -36,6 +36,7 @@ N N N	3	5	7
 
 select * from t2 RIGHT JOIN t1 ON t2.a= t1.a;
 
+chahe t2.xyz=t1.pxy or t1.pxy= t2.xyz karo dono se sam value hoaga
       1	1	6	1	4	6
 			2	5	7
       
@@ -46,4 +47,13 @@ select 8 from t1 inner join t2 on t2.a=t1.b
 ye jo row common hoga wahi o/p dega 
 
 
-self join : 
+self join : ex manager employee problem 
+
+
+select av.a as a_value, mv.m as m_value 
+from t2 av join t2 mv ON av.a=mv.m 
+
+op---
+a_value m_value 
+1	1
+1	1
