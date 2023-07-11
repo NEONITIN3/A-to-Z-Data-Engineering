@@ -1,0 +1,48 @@
+USE de_class
+CREATE TABLE UBER_EMPLOYEE(ID INT, FULLNAME VARCHAR(20), MANAGER_ID INT ,MANAGER_NAME VARCHAR(20))
+SELECT * FROM UBER_EMPLOYEE
+INSERT INTO UBER_EMPLOYEE VALUES(1,'JOHNSMITH',3,'TOMLALLON'),
+(2,'JOHNSMITH',3,'TOMLALLON'),(3,'JOHNSMITH',4,'ANNECONNON'),(5,'JOHNSMITH',1,'JOHNSMITH');
+
++----+-------+--------+-----------+
+| id | name  | salary | managerId |
++----+-------+--------+-----------+
+| 1  | Joe   | 70000  | 3         |
+| 2  | Henry | 80000  | 4         |
+| 3  | Sam   | 60000  | Null      |
+| 4  | Max   | 90000  | Null      |
++----+-------+--------+-----------+
+EMPLOYEE AUR MANAGER WALE QUESTION ME SELF JOIN HI KAAAM ATA HAI OKK
+
+
+employee alias ko managerid = manger alias id se equal
+
+select 
+emp.name as empl_name,
+mngr.name as manager_name  
+from    Employee emp
+           JOIN
+      Employee mngr
+           ON 
+emp.managerId= mngr.id
+
+
+emp 
++----+-------+--------+-----------+
+| id | name  | salary | managerId |
++----+-------+--------+-----------+
+| 1  | Joe   | 70000  | 3         |
+| 2  | Henry | 80000  | 4         |   emp.managerID= 3 joe 
+| 3  | Sam   | 60000  | Null      |
+| 4  | Max   | 90000  | Null      |
++----+-------+--------+-----------+
+
+mngr
++----+-------+--------+-----------+
+| id | name  | salary | managerId |     mngr.id =  3 sam hai    yanii ki JOE ka manger SAM hai
++----+-------+--------+-----------+
+| 1  | Joe   | 70000  | 3         |
+| 2  | Henry | 80000  | 4         |
+| 3  | Sam   | 60000  | Null      |
+| 4  | Max   | 90000  | Null      |
++----+-------+--------+-----------+
