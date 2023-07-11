@@ -1,0 +1,46 @@
+
+mast solution :
+1.handeling the duplicate salary
+2.handeling the one employee record
+3.it can be used as nTH highest salary record.
+select IFNULL((DISTINCT(e_salary) from employee order by e_salary desc limit 1 OFFSET 1) NULL) as secondhighestsalary ;
+bas offset ko change skarna hoga hisab se , 2 highest chahiye to offset 1 , 3 highest chahiye to offset 2 ....
+nth highest k liye N-1 offset chahiye
+
+Input: 
+Employee table:
++----+--------+
+| id | salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+Output: 
++---------------------+
+| SecondHighestSalary |
++---------------------+
+| 200                 |
++---------------------+
+
+//for view the second salary--
+select e_salary from employee order by e_salary desc;
+
+1.solution with sub query
+select max(e_salary) as second_highest_salary from employee where e_salary
+<(select max(e_salary) from employee);
+
+2. solution : desc order by kar 2 wala highest hoga es liye limit 1 aur offset 1 kar de
+select e_salary from employee order by e_salary desc limit 1 OFFSET 1;   
+but esme dikkat ye hai ye agar salary same huwa to usse nahi handel kar payega es liye ham distict function ka use karenge
+
+-->> select DISTINCT(e_salary) as secondhighestsalary from employee order by e_salary desc limit 1 OFFSET 1;
+
+3..upeer wala sulution ek case handel nahi kar raha hai jab ek hi employee ho to we need to give null as a secondhighest salary
+solution ::
+select IFNULL((DISTINCT(e_salary) from employee order by e_salary desc limit 1 OFFSET 1) NULL) as secondhighestsalary ;
+
+ab agar 3 highest chahiye to offset 2 rakh do....>>>>
+
+5 th highest chahiye to offset 4 rakh doo
+
