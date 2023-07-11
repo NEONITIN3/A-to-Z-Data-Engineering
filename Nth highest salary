@@ -1,0 +1,17 @@
+as we disscuss in 2 highest salary question 
+halndeling all the cases 
+we should use
+Set N=N-1;
+SELECT IFNULL((select distinct salary from employee orber by salary desc limit 1 OFFSET N),NULL) as NthhighestSalary
+
+
+proper way :
+
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+SET N=N-1;
+  RETURN (
+      # Write your MySQL query statement below.
+    select IFNULL((select Distinct salary from Employee order by salary desc limit 1 OFFSET N) ,NULL) as getNthHighestSalary
+  );
+END
