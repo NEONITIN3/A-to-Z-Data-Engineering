@@ -65,5 +65,13 @@ select score ,Dense_rank() over (order by score desc) as "rank" from scores;
 yaha alias me direct rank nahi likh sakte because its a function in sql but in o/p they want it as Rank colomn that why we need to "" for that alias
 4- DENCE_RANK  
 select salary from ( select distinct salary ,dense_rank() over(order by salary desc ) as salary_rank from employee) a where salary_rank =2;
+ but ye upar wala null wale case ko handel nahi kar payega so IFNULL use karna padega
 
+
+
+select IFNULL(
+  (select salary as SecondHighestSalary 
+from (select salary ,dense_rank() over(order by salary desc) as salary_rank from employee) a
+where salary_rank = 2),NULL
+) as secondhighestsalary
 
