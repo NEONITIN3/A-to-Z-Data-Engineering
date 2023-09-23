@@ -1,0 +1,23 @@
+where ko we cant use when we need to perform condition on group of row it only works for indivisual row.
+
+when we need to perform condition on group of row then we used HAVING.
+
+Key Differences Between WHERE and HAVING Clause 
+Here are the key differences between WHERE and HAVING clause in SQL:
+
+The WHERE clause implements in row operations, whereas the HAVING clause implements in column operations.
+The HAVING clause can contain an aggregate function, but the WHERE clause cannot contain an aggregate function.
+You can use the WHERE clause with a single row function. Whereas the HAVING clause is used with a multiple row function.
+The HAVING clause is applied after the GROUP BY clause, but the WHERE clause is applied before the GROUP BY clause.
+You can use the WHERE clause without the GROUP BY clause, But you cannot use the HAVING clause without the GROUP BY clause.
+You can use the WHERE clause with the SELECT, UPDATE, and DELETE statements. Whereas you can use the HAVING clause only with the SELECT statement.
+The WHERE clause in SQL allows you to filter data from specific rows (individual rows) from a table based on certain conditions. In contrast, the HAVING clause in 
+SQL allows you to filter data from a group of rows in a query based on conditions involving aggregate values.
+
+
+select dept_id from emp_salary group by dept_id having count(dept_id)>1
+
+aur yaha agar soche ki where check kar le to nahi kar skate becoz here we are combining groupp of row 
+select dept_id from emp_salary group by dept_id where count(dept_id)>1 -----will not work
+0	52	23:12:25	select dept_id from emp_salary group by dept_id where count(dept_id)>1	Error Code: 1064. You have an error in your SQL syntax; 
+check the manual that corresponds to your MySQL server version for the right syntax to use near 'where count(dept_id)>1' at line 1	0.000 sec
