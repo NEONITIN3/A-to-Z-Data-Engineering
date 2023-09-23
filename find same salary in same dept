@@ -1,0 +1,31 @@
+kaun kaun hai jo same dept me hai same salary pe here I used self join as well as partion also 
+
+CREATE TABLE Emp_Salary
+(
+Emp_id INT NOT NULL,
+Name Varchar(30) NOT NULL,
+Salary Varchar(30),
+Dept_Id INT
+);
+
+Insert into Emp_salary
+(Emp_id,Name,Salary,Dept_Id)
+Values(1001,'Alexa',25000,501),
+(1002,'John',30000,502),
+(1003,'S S Das',30000,502),
+(1004,'Sidh',35000,503),
+(1005,'Prateek',40000,504),
+(1006,'Ashwini',35000,503),
+(1007,'Ashutosh',25000,501),
+(1008,'Sourav',28000,505),
+(1009,'Debasish',45000,506);
+e.Emp_id as no, e.Name as emp_name ,e.Salary as e_salary, e.Dept_Id as id
+
+select * from emp_salary;
+select e.Emp_id as id, e.Name as emp_name ,e.Salary as e_salary, e.Dept_Id as d_id
+from 
+emp_salary e join emp_salary e2 on e.Dept_Id = e2.Dept_Id and e.Salary = e2.Salary and e.Emp_id<>e2.Emp_id
+order by e.Salary;
+
+with CTE as (select *,count(*) over(PARTITION BY Dept_Id,Salary) as nom from emp_salary)
+select * from CTE where nom =2; 
