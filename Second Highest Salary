@@ -44,3 +44,13 @@ ab agar 3 highest chahiye to offset 2 rakh do....>>>>
 
 5 th highest chahiye to offset 4 rakh doo
 
+
+with dense_rank:   select e_name ,e_dept, e_salary ,DENSE_RANK() over(order by e_salary desc) as sr from employee it will give rank of salary
+
+ select * from 
+ (select e_name ,e_dept, e_salary ,DENSE_RANK() over(order by e_salary desc) as sr from employee) a where sr =2;
+NOTE -> a in the query --------->
+every derive table must have its own alias thats why 'a' after that derive table from employee
+ 
+ 
+
