@@ -1,0 +1,30 @@
+!. first find the duplicate 
+select name from empployee group by name having count(name)>1 it will give duplicat ename 
+now I wnt to delete those name\
+
+delete name from employee where name in (select name form employee group by name having count(name)>1)    XXXXXXXXXXXXXXXXXXXXXXXXXX
+but this not allow 
+ERROR 0	119	09:07:05	delete from persons where age In 
+( SELECT age from persons group by age HAVING count(age)>1)	Error Code: 1093.
+ You can't specify target table 'persons' for update in FROM clause	0.000 sec
+ select * from product;
+
+correct query will be like :
+
+create a tem table with CTE 
+-----------------------------------------
+WITH cte as (
+select name from employee group by name having count(name)>1
+)delete from employee where age in (select age from cte)
+
+
+IT MIGHT BE SAY SAFE MODE ERROR THEN JUST DISABLE IT :    --> SET SQL_SAFE_UPDATES = 0;
+
+AFTER EXECITING ENABLE IT --->  SET SQL_SAFE_UPDATES = 1;
+---------------------------------------------------
+window function se bhi 
+
+WITH CTE as (
+select * , row_number() over(partition by colomn,order by colom2) as r from table
+)
+delete from cte where r>1;
