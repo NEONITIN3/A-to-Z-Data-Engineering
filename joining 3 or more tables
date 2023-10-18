@@ -66,3 +66,22 @@ select s_name, score, status, address_city,
 email_id, accomplishments from student s, 
 marks m, details d where s.s_id = m.s_id and 
 m.school_id = d.school_id;
+
+
+
+
+
+
+see the result by default join and inner join is give same results
+
+select d.email_id,d.address_city ,m.score , m.status from
+details d join marks m on d.school_id=m.school_id;
+
+select d.email_id,d.address_city ,m.score , m.status from
+details d inner join marks m on d.school_id=m.school_id;
+
+select d.email_id,d.address_city ,m.score , m.status from
+details d left join marks m on d.school_id=m.school_id;
+
+select d.email_id,d.address_city ,m.score , m.status from
+details d right join marks m on d.school_id=m.school_id;
