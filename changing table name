@@ -1,0 +1,8 @@
+alter table persons change column agewa ageware INT
+
+updating the colomn value
+
+Update table_name set column_name = value
+
+  ---
+   update persons set age = 23 
