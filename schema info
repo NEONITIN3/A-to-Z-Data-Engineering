@@ -1,0 +1,2 @@
+this the query will give the information of schema of table in big query
+SELECT DDL FROM dataset_name.INFORMATION_SHCEMA.TABLES WHERE TABLE_NAME = 'YOUR TABLE NAME'
