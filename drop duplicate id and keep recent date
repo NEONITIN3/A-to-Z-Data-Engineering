@@ -2,3 +2,26 @@ with sub query :
 SELECT * 
 FROM yourtable t1
 WHERE date = (SELECT max(date) from yourtable WHERE id = t1.id)
+
+
+---------------
+WITH LatestDatePerID AS (
+  SELECT
+    ID,
+    MAX(date) AS latest_date
+  FROM
+    your_table_name  -- Replace with your actual table name
+  GROUP BY
+    ID
+)
+
+SELECT
+  t.*
+FROM
+  your_table_name AS t
+JOIN
+  LatestDatePerID AS ld
+ON
+  t.ID = ld.ID
+  AND t.date = ld.latest_date;
+
