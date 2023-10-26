@@ -1,0 +1,4 @@
+with sub query : 
+SELECT * 
+FROM yourtable t1
+WHERE date = (SELECT max(date) from yourtable WHERE id = t1.id)
