@@ -1,0 +1,26 @@
+# palindrome 
+
+#
+t="123321"
+if t[::-1]==t:
+    print("yes its palindrom")
+else:
+    print("naahi")
+    
+#algorithm
+# claculate string len
+def palindrome(s):
+    for i in range (0,int(len(s)/2)):
+        if s[i] != s[len(s)-i-1]:
+            return False
+    return True
+
+s="aaaaaaaabbs"
+result = palindrome(s)  # ye result dikhayega 
+print(result)
+
+# agar result false hao tab palindrome nahi hai us hiab se print
+if (result):
+    print("its palindrome")
+else:
+    print("nooooooooo")
