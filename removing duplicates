@@ -1,0 +1,11 @@
+#removing the duplicates
+l=[1,2,3,4,45,5,4,3,2,1,1,1,23,55,44,55,6,666,6]
+#convert it into set dataset
+print(set(l))
+
+#algorithm
+l2=[]
+for i in l:
+    if i not in l2:
+        l2.append(i)
+print(l2)
