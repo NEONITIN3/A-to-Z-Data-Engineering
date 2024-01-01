@@ -1,0 +1,17 @@
+def count_latter(s):
+    latter_freq={}
+    for i in s:
+        if i in latter_freq:
+            latter_freq[i] += 1
+        else:
+            latter_freq[i] = 1
+    for key,value in latter_freq.items():
+        print(key,"-->",value)
+
+s="qqqqqqqqqqwwwwwwggggggggddddddddhhhhhhhqqqqqqnnnnnnnnnshh"
+l=[1,2,2,2,1,1,1,3,88,8,8,3,10,4,4,4,9,9,9,6,6,0,0,0,1]
+count_latter(s)
+count_latter(l)
+
+
+happy new year 2024
