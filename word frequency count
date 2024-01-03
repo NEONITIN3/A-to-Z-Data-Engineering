@@ -1,0 +1,37 @@
+def word_count():
+    str1 = input("entre the sentance :->  ")
+    #word wise split kar do
+    lst = str1.split()
+    frq = {}
+    for i in lst:
+        if i in frq:
+            frq[i] += 1
+        else:
+            frq[i]=1
+    for key,value in frq.items():
+        print(key," - ",value)
+word_count()
+0/p
+hh  -  2
+ii  -  2
+kk  -  2
+
+
+dictiniory me :-----------------------
+def word_count():
+    str1 = input("entre the sentance :->  ")
+    #word wise split kar do
+    lst = str1.split()
+    frq = {}
+    for i in lst:
+        if i not in frq.keys():
+            frq[i] = 0
+        frq[i] += 1
+    print(frq)
+word_count()
+
+0/p;;;;;;;;;;;;;;
+entre the sentance :->  hi hello hi ita its me neo neo nitin
+{'hi': 2, 'hello': 1, 'ita': 1, 'its': 1, 'me': 1, 'neo': 2, 'nitin': 1}
+
+
