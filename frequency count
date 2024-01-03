@@ -14,4 +14,27 @@ count_latter(s)
 count_latter(l)
 
 
+word frequency count :
+
+def word_count():
+    str1 = input("entre the sentance :->  ")
+    #word wise split kar do
+    lst = str1.split()
+    frq = {}
+    for i in lst:
+        if i in frq:
+            frq[i] += 1
+        else:
+            frq[i]=1
+    for key,value in frq.items():
+        print(key," - ",value)
+word_count()
+0/p
+hh  -  2
+ii  -  2
+kk  -  2
+
+
+
+
 happy new year 2024
