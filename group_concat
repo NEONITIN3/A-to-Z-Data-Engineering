@@ -1,0 +1,21 @@
+CREATE TABLE bika (
+    sell_date DATE,
+    product VARCHAR(255)
+);    
+select * from bika
+INSERT INTO bika (sell_date, product)
+VALUES
+('2020-05-30', 'Headphone'),
+('2020-06-01', 'Pencil'),
+('2020-06-02', 'Mask'),
+('2020-05-30', 'Basketball'),
+('2020-06-01', 'Bible'),
+('2020-06-02', 'Mask'),
+('2020-05-30', 'T-Shirt');
+
+select sell_date, count(product) as no_of_product ,group_concat(product) as da from bika GROUP BY sell_date;
+    
+    
+    
+    
+    date | no-of product sell | product list 
