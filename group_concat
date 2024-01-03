@@ -19,3 +19,18 @@ select sell_date, count(product) as no_of_product ,group_concat(product) as da f
     
     
     date | no-of product sell | product list 
+
+
+0rder of exicution : In a SQL query, the order of execution is as follows:
+
+FROM clause: Specifies the table or tables from which to retrieve the data. In your query, this is FROM bika.
+
+GROUP BY clause: Groups the rows based on the specified columns. In your query, this is GROUP BY sell_date.
+
+COUNT() function: Counts the number of rows in each group. In your query, this is count(product).
+
+GROUP_CONCAT() function: Concatenates the values of the product column within each group into a
+comma-separated list. In your query, this is group_concat(product).
+
+SELECT clause: Selects the columns or expressions to be included in the result set. In your query, 
+this is SELECT sell_date, count(product) as no_of_product, group_concat(product) as da.
