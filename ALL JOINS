@@ -57,3 +57,44 @@ op---
 a_value m_value 
 1	1
 1	1
+
+
+Interview question 
+t1             t2
+a    b       a     c
+1    2       1     7
+2    4       1     9
+null 5       2     8
+             2     78
+             null   51
+left join t1 from t2 on using(a) then 0/p
+
+dekho a ke value k respect me jitne bhi value t2 me hai sab o/p me honge aur NULL= NULL nhi compare hoga.
+o/p will be like : 
+
+
+a   b   a   c
+1   2   1   7
+1   2   1   9
+2   4   2   8
+2   4   2   78
+null 5  null null
+
+esi tarah right join dono me inner join me to jis value pe join ho raha hai agar wo null hai to uske respect me value o/p m nhi hoga 
+a  b   a   c
+1  2   1   7
+1  2   1   9
+2  4   2   8
+2  4   2   78     ye hai join/inner join ka o/p
+
+
+
+
+
+
+
+
+
+
+
+
