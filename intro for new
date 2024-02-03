@@ -1,0 +1,8 @@
+Designed and Developed automated ETL/ELT Data Pipelines for Supply Chain domain Customers to migrate the data from various sources such as 
+
+PostgreSQL, Open Bridge, GCS, Gsheets, and Gmail into Bigquery using Google Cloud Composer.
+The reporting layer filters data as per requirement by Looker Studio Dashboards and is made available to end users.
+Designed and developed a Profitability to have an effective Profitability and Inventory Visibility Solution to track inventory and gain 
+visibility of the current location of containers with third-party logistic service at the PO level. For five different worlds(USA, CA, DE, JP. UK).
+Data Migrated from various sources such as Gmail, PostgreSQL, Gsheet, and GCS using Google Cloud Composer, Google Cloud Functions, and BigQuery.
+The reporting layer filters data as per requirements is accessed by Google Looker Studio Dashboards and is made available to end users.
