@@ -1,0 +1,42 @@
+Lets get into some Basic bq commands that you need to be familiar with for managing and Interacting with Data.
+
+bq ls: List datasets, tables, or jobs in the current project or specified location.
+bq ls
+bq ls --location=US
+bq ls --dataset=mydataset
+2. bq show: Display detailed information about a dataset, table, or job.
+
+bq show mydataset
+bq show mydataset.mytable
+bq show --job=job_id
+3. bq rm: Remove a dataset, table, or job.
+
+bq rm mydataset
+bq rm mydataset.mytable
+bq rm --job=job_id
+4. bq mk: Create a dataset or table.
+
+bq mk dataset mydataset
+bq mk --table mydataset.mytable schema.txt
+5. bq load: Load data into a BigQuery table from various sources.
+
+bq load mydataset.mytable data.csv
+bq load --table mydataset.mytable data.json schema.json
+6. bq query: Run a SQL query against BigQuery tables.
+
+bq query "SELECT * FROM mydataset.mytable"
+bq query --job=job_id "SELECT * FROM mydataset.mytable"
+7. bq get-iam-policy: Retrieve the IAM policy for a BigQuery resource.
+
+bq get-iam-policy mydataset
+bq get-iam-policy mydataset.mytable
+8. bq set-iam-policy: Set the IAM policy for a BigQuery resource.
+
+bq set-iam-policy mydataset policy.json
+bq set-iam-policy mydataset.mytable policy.json
+9. bq cp : command for the following tasks:
+
+Create a copy of a table, table clone, or table snapshot.
+Create a table clone.
+Create a table snapshot.
+bq cp myDataset.myTable myDataset.myTableCopy
