@@ -1,0 +1,12 @@
+# Set the project ID, dataset ID, table ID, and Cloud Storage URI
+PROJECT_ID="qwiklabs-gcp-01-4ab42989a682"
+DATASET_ID="cymbal_warehouse"
+TABLE_ID="cym_data"
+GCS_URI="gs://qwiklabs-gcp-01-4ab42989a682/cymbal_investments_report.csv"
+
+# Create a BigQuery table
+bq --location=US mk --dataset $PROJECT_ID:$DATASET_ID
+bq mk --table $PROJECT_ID:$DATASET_ID.$TABLE_ID
+
+# Load data from Cloud Storage into BigQuery table
+bq load --source_format=CSV $PROJECT_ID:$DATASET_ID.$TABLE_ID $GCS_URI
