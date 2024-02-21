@@ -1,0 +1,6 @@
+CREATE TABLE `qwiklabs-gcp-01-d4e5b8391a69.cymbal_dataset.cym_refined_data`
+PARTITION BY TradeDate
+CLUSTER BY Symbol
+AS
+SELECT *
+FROM `qwiklabs-gcp-01-d4e5b8391a69.cymbal_dataset.cymbal_data`;
