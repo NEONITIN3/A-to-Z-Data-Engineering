@@ -3,7 +3,7 @@
 
  # --------- # Explanation  
 
- Sure, the data warehouse migration architecture you sent me depicts a possible approach to migrating an on-premises data warehouse to Google Cloud's BigQuery. Here's a breakdown of the key components and steps involved:
+ Approach to migrating an on-premises data warehouse to Google Cloud's BigQuery. Here's a breakdown of the key components and steps involved:
 
 **Source data:**
 
