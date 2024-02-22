@@ -127,3 +127,20 @@ I hope this explanation gives you a solid understanding of SAP BW and its role i
 # ERM vs MDM ( OLTP vs OLAP)
 ![image](https://github.com/NEONITIN3/A-to-Z-Data-Engineering/assets/69511265/e4af64d0-a34f-4969-9be6-b1e9b265c7e4)
 
+# Why we need this SAP BW (MDM OLAP)
+SAP ERP (Enterprise Resource Planning) and SAP BW (Business Warehouse) are two distinct components of the SAP ecosystem, each serving different purposes within an organization's technology infrastructure:
+
+1. **SAP ERP**:
+   - SAP ERP is a comprehensive suite of integrated business applications that help manage various business processes such as finance, human resources, procurement, manufacturing, supply chain, and sales.
+   - It serves as a central repository of data and processes for an organization, enabling seamless flow of information across different departments.
+   - SAP ERP modules include SAP FI (Financial Accounting), SAP CO (Controlling), SAP MM (Materials Management), SAP SD (Sales and Distribution), SAP HCM (Human Capital Management), and more.
+   - SAP ERP is primarily focused on transactional processing, ensuring that business operations run smoothly and efficiently.
+
+2. **SAP BW**:
+   - SAP BW, or SAP Business Warehouse, is a data warehousing and business intelligence platform.
+   - It is designed to integrate data from various sources within an organization, such as SAP ERP systems, external databases, spreadsheets, and other applications.
+   - SAP BW provides tools for data extraction, transformation, loading (ETL), storage, and analysis.
+   - It enables organizations to perform advanced analytics, reporting, and decision-making based on historical and real-time data.
+   - SAP BW is particularly useful for creating data models, data mining, data visualization, and generating reports and dashboards to support strategic decision-making processes.
+
+In summary, while SAP ERP focuses on managing business processes and transactions, SAP BW is more specialized in data warehousing and analytics, providing capabilities for extracting, transforming, and analyzing data from various sources to support informed decision-making within the organization. Often, organizations use both SAP ERP and SAP BW in conjunction to streamline their business operations and enhance their analytical capabilities.
