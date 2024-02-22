@@ -115,3 +115,15 @@ Here's a breakdown of SAP BW's key functionalities:
 SAP is actively developing its **SAP BW/4HANA** solution, which leverages the power of SAP HANA for real-time data processing and advanced analytics. This cloud-based offering addresses some of the limitations of traditional SAP BW and positions it for the future of enterprise data warehousing.
 
 I hope this explanation gives you a solid understanding of SAP BW and its role in data-driven decision making. If you have any further questions or want to delve deeper into specific aspects, feel free to ask!
+
+# SAP BW
+<img width="1001" alt="Screenshot 2024-02-22 at 11 09 12 PM" src="https://github.com/NEONITIN3/A-to-Z-Data-Engineering/assets/69511265/e8d3fa10-00fc-43ce-b50f-8da3b3f21bba">
+
+![image](https://github.com/NEONITIN3/A-to-Z-Data-Engineering/assets/69511265/1b97d15a-a9d1-40bf-ba85-52d70fcc7d93)
+
+# layer of SAP BW
+![image](https://github.com/NEONITIN3/A-to-Z-Data-Engineering/assets/69511265/aece051b-a9ae-4855-9dc2-c5c06e43f4f0)
+
+# ERM vs MDM ( OLTP vs OLAP)
+![image](https://github.com/NEONITIN3/A-to-Z-Data-Engineering/assets/69511265/e4af64d0-a34f-4969-9be6-b1e9b265c7e4)
+
