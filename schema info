@@ -1,2 +1,7 @@
 this the query will give the information of schema of table in big query
-SELECT DDL FROM dataset_name.INFORMATION_SHCEMA.TABLES WHERE TABLE_NAME = 'YOUR TABLE NAME'
+
+
+schema info
+SELECT DDL 
+FROM `california-desig-1536902647897.common_data_dev.INFORMATION_SCHEMA.TABLES` 
+WHERE TABLE_NAME = 'gmail_pipe_audit_logs'
